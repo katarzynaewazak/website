@@ -28,6 +28,7 @@
 
   function setValues(title, category, customer, date, subTitle, description, imageLinks, anchor) {
     //document.getElementById('galleryTitle').innerHTML = title;
+    document.getElementById('projectName').innerHTML = title;    
     //document.getElementById('galleryCategory').innerHTML = category;
     //document.getElementById('galleryCustomer').innerHTML = customer;
     //document.getElementById('galleryDate').innerHTML = date;
@@ -60,7 +61,7 @@
   }
   
   function setDefaults(){
-    console.log("default loading");
+    //console.log("default loading");
     setValues("", "", "", "", "", "", null);
   }
 
@@ -90,10 +91,9 @@
         setDefaults();
         return;
     }
-    const path = `assets/img/projects/${anchor.replace(/\/+$/, '')}/gallery.json`;
 
-    console.log(path);
-    
+    const path = `assets/img/projects/${anchor.replace(/\/+$/, '')}/gallery.json`;
+    //console.log(path);
 
     fetch(path)
     .then((response) => {
